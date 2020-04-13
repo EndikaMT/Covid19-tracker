@@ -18,7 +18,7 @@ table = html.parse_source(source)[0][1]
 # Bloque de normalización y un poco de "preprocesado"
 
 ## Creamos la lista de elementos que vamos a descartar (en la tabla aparece subtotales que no queremos)
-errors = ['Total:', '\nNorthAmerica\n', '\nEurope\n', '\nAsia\n', '\nSouthAmerica\n', '\nOceania\n', '\nAfrica\n', 'World', '\n\n']
+errors = ['Total:', '\nNorthAmerica\n', '\nEurope\n', '\nAsia\n', '\nSouthAmerica\n', '\nOceania\n', '\nAfrica\n', 'World', '\n\n', 'DiamondPrincess']
 
 ## Renombramos columnas con símbolos o caracteres raros que nos pueden dar problemas en el futuro
 table.rename(columns={ table.columns[0]: "Country" }, inplace = True)
