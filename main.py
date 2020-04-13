@@ -29,9 +29,6 @@ table = table[~table.Country.isin(errors)]
 
 ## Renombramos la tabla como table_clean para hacer el segundo bloque de preprocesado
 table_clean = table
-## En las categoría "New" (NewCases y NewDeaths) eliminamos los +/- para poder tratar todo como número
-#table_clean['NewCases'] = table['NewCases'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
-#table_clean['NewDeaths'] = table['NewDeaths'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
 
 ## Ordenamos el dataframe por mayor a menor número de casos detectados
 table_clean = table_clean.sort_values('TotalCases', ascending=False)
