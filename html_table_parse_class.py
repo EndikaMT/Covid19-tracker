@@ -57,9 +57,11 @@ class TableParser:
                 df.replace('N/A',0, regex=True, inplace=True)
                 df.replace('\+','', regex=True, inplace=True)
                 df.replace('\-','', regex=True, inplace=True)
+                df.replace(' ', '', regex=True, inplace=True)
                 df.replace('', 0, regex=True, inplace=True)
                 # Forzamos a que todos los valores de las columnas, si se puede, sea integers (números enteros)
                 df[col] = df[col].astype(int)
             except ValueError:
                 pass
+        
         return df

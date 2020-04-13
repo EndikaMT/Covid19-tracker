@@ -18,7 +18,7 @@ table = html.parse_source(source)[0][1]
 # Bloque de normalización y un poco de "preprocesado"
 
 ## Creamos la lista de elementos que vamos a descartar (en la tabla aparece subtotales que no queremos)
-errors = ['Total:', '\nNorth America\n', '\nEurope\n', '\nAsia\n', '\nSouth America\n', '\nOceania\n', '\nAfrica\n', 'World', '\n\n']
+errors = ['Total:', '\nNorthAmerica\n', '\nEurope\n', '\nAsia\n', '\nSouthAmerica\n', '\nOceania\n', '\nAfrica\n', 'World', '\n\n']
 
 ## Renombramos columnas con símbolos o caracteres raros que nos pueden dar problemas en el futuro
 table.rename(columns={ table.columns[0]: "Country" }, inplace = True)
@@ -40,10 +40,9 @@ table_clean = table_clean.sort_values('TotalCases', ascending=False)
 ## Con la función to_csv de Pandas, exportamos el dataframe sin exportar el número de indice de la tabla e indicando el separador
 table_clean.to_csv("Covid19.csv", sep=';', index=False)
 ## Obtenemos un head para ver el formato de la tabla y los primeros elementos
-print(table_clean.head())
-
 
 table_clean = table_clean[:15]
+print(table_clean)
 table_clean['ActiveCases'] = table_clean['ActiveCases'].astype(int)
 table_clean['TotalDeaths'] = table_clean['TotalDeaths'].astype(int)
 table_clean['TotalRecovered'] = table_clean['TotalRecovered'].astype(int)
