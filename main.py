@@ -3,7 +3,6 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from html_table_parse_class import TableParser
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 # Web en la que disponemos de la tabla a parsear.
