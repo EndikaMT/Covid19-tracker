@@ -38,7 +38,7 @@ table_clean = table
 table_clean = table_clean.sort_values('TotalCases', ascending=False)
 
 ## Con la función to_csv de Pandas, exportamos el dataframe sin exportar el número de indice de la tabla e indicando el separador
-table_clean.to_csv("Coronavirus.csv", sep=';', index=False)
+table_clean.to_csv("Covid19.csv", sep=';', index=False)
 ## Obtenemos un head para ver el formato de la tabla y los primeros elementos
 print(table_clean.head())
 
